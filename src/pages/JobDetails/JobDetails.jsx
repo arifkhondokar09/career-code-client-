@@ -3,7 +3,7 @@ import { Link, useLoaderData } from 'react-router';
 
 const JobDetails = () => {
     const job = useLoaderData();
-    console.log(job)
+    // console.log(job);
      const { _id, title, location,  salaryRange,requirements,company_logo,company,description } = job;
     return (
         <div className="card border  shadow-sm bg-gray-200 p-3">

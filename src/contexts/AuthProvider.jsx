@@ -39,15 +39,19 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
-            console.log('hello user', currentUser)
+            // console.log('hello user', currentUser)
             if (currentUser?.email) {
                 const userData = { email: currentUser.email };
 
-                axios.post('http://localhost:5000/jwt', userData, {
+                axios.post('https://career-code-server-lake.vercel.app/jwt', userData, {
                     withCredentials: true
                 })
-                    .then(res => console.log("response after jwt", res.data))
-                    .catch(error => console.log(error))
+                    .then(res =>
+                         res.data
+                        )
+                    .catch(error =>{ 
+                        // console.log(error)
+                    })
             }
             setLoading(false)
         })

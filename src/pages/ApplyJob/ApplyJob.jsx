@@ -11,7 +11,7 @@ const Applyjob = () => {
 
     const { id: jobId } = useParams();
 
-    console.log(user, jobId)
+    // console.log(user, jobId)
 
 
     const handleSubmit = e => {
@@ -21,7 +21,7 @@ const Applyjob = () => {
         const github = form.github.value;
         const linkedIn = form.linkedIn.value;
         const resume = form.resume.value;
-        console.log(github, linkedIn, resume);
+        // console.log(github, linkedIn, resume);
         const application = {
             jobId,
             applicant: user.email,
@@ -29,9 +29,9 @@ const Applyjob = () => {
             linkedIn,
             resume
         };
-        axios.post("http://localhost:5000/applications", application)
+        axios.post("https://career-code-server-lake.vercel.app/applications", application)
             .then(data => {
-                console.log(data.data);
+                // console.log(data.data);
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -43,7 +43,7 @@ const Applyjob = () => {
 
             })
             .catch(error => {
-                console.log(error)
+                // console.log(error)
             })
 
 

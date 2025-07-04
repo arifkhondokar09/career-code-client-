@@ -6,14 +6,14 @@ import Swal from 'sweetalert2';
 const ViewApplication = () => {
     const { id } = useParams();
     const jobs = useLoaderData();
-    console.log(jobs)
+    // console.log(jobs);
 
     const handleStatus = (e, id) => {
-        console.log(e.target.value, id)
+        // console.log(e.target.value, id);
 
-        axios.patch(`http://localhost:5000/application/${id}`, { status: e.target.value })
+        axios.patch(`https://career-code-server-lake.vercel.app/application/${id}`, { status: e.target.value })
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data);
 
                 if (res.data.modifiedCount) {
                     Swal.fire({
@@ -25,7 +25,9 @@ const ViewApplication = () => {
                     });
                 }
             })
-            .catch(error => console.log(error))
+            .catch(error =>{
+                // console.log(error)
+            })
 
     }
     return (

@@ -8,17 +8,17 @@ const Navbar = () => {
     const navigate = useNavigate();
 
 
-    console.log(user);
+    // console.log(user);
 
     const handleSignOut = () => {
         signOutUser()
             .then(() => {
-                console.log("sucessfully signout");
+                // console.log("sucessfully signout");
                 navigate("/login")
 
             })
             .catch(error => {
-                console.log(error)
+                // console.log(error);
             })
     }
 

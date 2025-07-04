@@ -6,9 +6,9 @@ const MyApplications2 = () => {
     const { user } = useAuth();
 
     const applications2 = useLoaderData();
-    console.log(applications2);
+    // console.log(applications2);
     const remainingApplications2 = applications2.filter(app => app.applicant === user.email)
-    console.log(remainingApplications2)
+    // console.log(remainingApplications2)
 
     return (
         <div className="overflow-x-auto">

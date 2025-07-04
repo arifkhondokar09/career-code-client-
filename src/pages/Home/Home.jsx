@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import Banner from './Banner';
 import HotJobs from './HotJobs';
 
-const jobsPromise= fetch("http://localhost:5000/allJobs",{
+const jobsPromise= fetch("https://career-code-server-lake.vercel.app/allJobs",{
   credentials:'include'
 }).then(res=> res.json());
 const Home = () => {

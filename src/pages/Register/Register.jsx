@@ -18,15 +18,15 @@ const Register = () => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
+        // console.log(email, password);
          createUser(email,password)
          .then(result=> {
-            console.log(result.user)
+            // console.log(result.user);
             navigate("/")
          })
          .catch(error=> {
-            console.log(error.message);
-            console.log(error.code)
+            // console.log(error.message);
+            // console.log(error.code)
          })
 
     }

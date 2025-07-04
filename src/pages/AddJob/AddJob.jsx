@@ -23,9 +23,9 @@ const AddJob = () => {
 
         newJob.status = "active"
 
-        axios.post("http://localhost:5000/jobs", newJob)
+        axios.post("https://career-code-server-lake.vercel.app/jobs", newJob)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 if (res.data.insertedId) {
                     Swal.fire({
                         position: "top-end",
@@ -36,7 +36,9 @@ const AddJob = () => {
                     });
                 }
             })
-            .catch(error => console.log(error))
+            .catch(error =>{
+                //  console.log(error)
+            })
 
     }
     return (
