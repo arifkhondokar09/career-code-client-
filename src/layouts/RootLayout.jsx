@@ -3,6 +3,7 @@ import Navbar from '../pages/Shared/Navbar';
 
 import { Outlet } from 'react-router';
 import Footer from '../pages/Shared/Footer';
+import { Suspense } from 'react';
 
 const RootLayout = () => {
     return (
@@ -10,7 +11,11 @@ const RootLayout = () => {
            
                 <Navbar></Navbar>
               
-                    <Outlet ></Outlet>
+                  <div >
+                     
+                        <Outlet ></Outlet>
+                     
+                  </div>
               
               
                 <Footer></Footer>

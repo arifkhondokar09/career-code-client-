@@ -12,22 +12,20 @@ const HotJobs = () => {
 
 
     useEffect(() => {
-        fetch('https://career-code-server-lake.vercel.app/allJobs', {
-            credentials: 'include'
-        })
+        fetch('http://localhost:5000/allJobs')
             .then(res => res.json())
             .then(data => {
-                // console.log(data)
+                // console.log(data);
                 setJobs(data);
-                setLoading(false)
+                setLoading(false);
 
             })
     }, []);
 
 
-if(loading){
-    return <h2 className='text-center text-3xl mt-10 font-semibold'> Loading.........</h2>
-}
+    if (loading) {
+        return <h2 className='text-center text-3xl mt-10 font-semibold'> Loading.........</h2>
+    }
 
     return (
         <div >

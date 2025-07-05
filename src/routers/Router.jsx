@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import { createBrowserRouter } from 'react-router';
 import RootLayout from '../layouts/RootLayout';
 import Home from '../pages/Home/Home';
@@ -23,12 +23,14 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                Component: Home
+                Component: Home,
+                
+                    
             },
             {
                 path: "/jobs/:id",
                 Component: JobDetails,
-                loader: ({ params }) => fetch(`https://career-code-server-lake.vercel.app/jobs/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/jobs/${params.id}`)
 
             },
             {
@@ -40,11 +42,11 @@ const router = createBrowserRouter([
             {
                 path: '/myApplications',
                 element: <PrivateRouter><MyApplications></MyApplications></PrivateRouter>,
-              
 
-              
+
+
             },
-            
+
             {
                 path: '/addJob',
                 element: <PrivateRouter><AddJob></AddJob></PrivateRouter>
@@ -54,11 +56,11 @@ const router = createBrowserRouter([
                 element: <PrivateRouter><MyPostedJobs></MyPostedJobs></PrivateRouter>
             },
             {
-                path:'/application/:id',
-                element:<PrivateRouter> <ViewApplication></ViewApplication></PrivateRouter>,
-                  loader: ({params})=> fetch(`https://career-code-server-lake.vercel.app/application/job/${params.id}`)
+                path: '/application/:id',
+                element: <PrivateRouter> <ViewApplication></ViewApplication></PrivateRouter>,
+                loader: ({ params }) => fetch(`http://localhost:5000/application/job/${params.id}`)
             }
-           ,
+            ,
             {
                 path: "/register",
                 Component: Register

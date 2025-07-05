@@ -11,7 +11,7 @@ const ViewApplication = () => {
     const handleStatus = (e, id) => {
         // console.log(e.target.value, id);
 
-        axios.patch(`https://career-code-server-lake.vercel.app/application/${id}`, { status: e.target.value })
+        axios.patch(`http://localhost:5000/application/${id}`, { status: e.target.value })
             .then(res => {
                 // console.log(res.data);
 
@@ -25,7 +25,7 @@ const ViewApplication = () => {
                     });
                 }
             })
-            .catch(error =>{
+            .catch(() =>{
                 // console.log(error)
             })
 

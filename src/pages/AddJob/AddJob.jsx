@@ -23,7 +23,7 @@ const AddJob = () => {
 
         newJob.status = "active"
 
-        axios.post("https://career-code-server-lake.vercel.app/jobs", newJob)
+        axios.post("http://localhost:5173/jobs", newJob)
             .then(res => {
                 // console.log(res.data);
                 if (res.data.insertedId) {
@@ -36,7 +36,7 @@ const AddJob = () => {
                     });
                 }
             })
-            .catch(error =>{
+            .catch(() =>{
                 //  console.log(error)
             })
 

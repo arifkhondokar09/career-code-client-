@@ -1,5 +1,5 @@
 export const applicationsPromise = (email) => {
-    return fetch(`https://career-code-server-lake.vercel.app/applications?email=${email}`,{
+    return fetch(`http://localhost:5000/applications?email=${email}`,{
         credentials:'include'
     })
         .then(res => res.json())

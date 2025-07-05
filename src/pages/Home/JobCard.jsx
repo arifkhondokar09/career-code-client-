@@ -4,10 +4,10 @@ import { IoLocationOutline } from 'react-icons/io5';
 import { Link } from 'react-router';
 
 const JobCard = ({ job }) => {
-    const { _id, title, location, category, jobType, salaryRange, currency, requirements,company_logo,company,description } = job;
+    const { _id, title, location, salaryRange,  requirements,company_logo,company,description } = job;
 
     return (
-        <div className="card bg-base-100  shadow-sm bg-gray-200 p-3">
+        <div className="card  shadow-sm bg-gray-200 p-3">
            <div className='flex items-center'>
              <figure>
                 <img

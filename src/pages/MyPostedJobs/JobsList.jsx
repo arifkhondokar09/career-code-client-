@@ -1,9 +1,33 @@
-import React, { use } from 'react';
+import React, {  use, useEffect, useState } from 'react';
 import { Link } from 'react-router';
+import { AuthContext } from '../../contexts/AuthContext';
 
-const JobsList = ({ jobsPromise }) => {
-    const jobsList = use(jobsPromise);
-    // console.log(jobsList)
+
+const JobsList = () => {
+    // const jobsList = use(jobsPromise);
+    // console.log(jobsList);
+    const [jobsList, setJobsList] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    const { user } = use(AuthContext);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/jobs?email=${user.email}`, {
+            credentials: 'include'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setJobsList(data);
+                setLoading(false);
+            })
+
+    }, [user?.email]);
+
+    if (loading) {
+        return <h2> loading.............. </h2>
+    }
+
 
     return (
         <div>
@@ -26,7 +50,7 @@ const JobsList = ({ jobsPromise }) => {
                         </thead>
                         <tbody>
                             {
-                                jobsList.map((job, index) =>
+                                jobsList?.map((job, index) =>
 
                                     <tr key={job._id}>
                                         <th>{index + 1}</th>
@@ -47,7 +71,7 @@ const JobsList = ({ jobsPromise }) => {
 
 
 
-                                       
+
                                     </tr>
                                 )
 

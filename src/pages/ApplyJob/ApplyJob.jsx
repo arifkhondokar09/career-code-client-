@@ -29,8 +29,8 @@ const Applyjob = () => {
             linkedIn,
             resume
         };
-        axios.post("https://career-code-server-lake.vercel.app/applications", application)
-            .then(data => {
+        axios.post("http://localhost:5000/applications", application)
+            .then(() => {
                 // console.log(data.data);
                 Swal.fire({
                     position: "top-end",
@@ -42,7 +42,7 @@ const Applyjob = () => {
                 // form.reset();
 
             })
-            .catch(error => {
+            .catch(() => {
                 // console.log(error)
             })
 
