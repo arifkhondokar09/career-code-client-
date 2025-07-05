@@ -8,6 +8,7 @@ import JobCard from './JobCard';
 const HotJobs = () => {
 
     const [jobs, setJobs] = useState([]);
+    const [loading, setLoading] = useState(true);
 
 
     useEffect(() => {
@@ -16,15 +17,17 @@ const HotJobs = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setJobs(data);
+                setLoading(false)
+
             })
     }, []);
 
-    if (jobs.length === 0) {
-        return <h2>LOADING...........................................</h2>
-    }
 
+if(loading){
+    return <h2 className='text-center text-3xl mt-10 font-semibold'> Loading.........</h2>
+}
 
     return (
         <div >
