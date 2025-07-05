@@ -43,7 +43,7 @@ const AuthProvider = ({ children }) => {
             if (currentUser?.email) {
                 const userData = { email: currentUser.email };
 
-                axios.post('http://localhost:5000/jwt', userData, {
+                axios.post('https://career-code-client-14ed8.web.app/jwt', userData, {
                     withCredentials: true
                 })
                     .then(res => {

@@ -7,10 +7,6 @@ const ApplicationList = ({ applicationsPromise }) => {
 
 
 
-
-
-
-
     return (
         <div>
             <h1 className="text-3xl">My total applications so far : {applications.length}</h1>
@@ -33,7 +29,7 @@ const ApplicationList = ({ applicationsPromise }) => {
                         </thead>
                         <tbody>
                             {
-                                applications.map((app, index) =>
+                                applications?.map((app, index) =>
 
                                     <tr key={app._id}>
                                         <th>{index + 1}</th>

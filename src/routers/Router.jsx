@@ -8,7 +8,7 @@ import JobDetails from '../pages/JobDetails/JobDetails';
 import PrivateRouter from '../routes/PrivateRouter';
 import Applyjob from '../pages/ApplyJob/Applyjob';
 import MyApplications from '../pages/MyApplications/MyApplications';
-import MyApplications2 from '../pages/MyApplications/MyApplications2';
+
 import AddJob from '../pages/AddJob/AddJob';
 import MyPostedJobs from '../pages/MyPostedJobs/MyPostedJobs';
 
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             {
                 path: "/jobs/:id",
                 Component: JobDetails,
-                loader: ({ params }) => fetch(`http://localhost:5000/jobs/${params.id}`)
+                loader: ({ params }) => fetch(`https://career-code-client-14ed8.web.app/jobs/${params.id}`)
 
             },
             {
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
             {
                 path: '/application/:id',
                 element: <PrivateRouter> <ViewApplication></ViewApplication></PrivateRouter>,
-                loader: ({ params }) => fetch(`http://localhost:5000/application/job/${params.id}`)
+                loader: ({ params }) => fetch(`https://career-code-client-14ed8.web.app/application/job/${params.id}`)
             }
             ,
             {
