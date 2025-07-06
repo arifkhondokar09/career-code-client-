@@ -11,7 +11,7 @@ const ViewApplication = () => {
     const handleStatus = (e, id) => {
         // console.log(e.target.value, id);
 
-        axios.patch(`https://career-code-client-14ed8.web.app/application/${id}`, { status: e.target.value })
+        axios.patch(`https://career-code-server-chi.vercel.app/application/${id}`, { status: e.target.value })
             .then(res => {
                 // console.log(res.data);
 

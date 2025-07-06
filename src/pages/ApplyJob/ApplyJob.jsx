@@ -29,7 +29,7 @@ const Applyjob = () => {
             linkedIn,
             resume
         };
-        axios.post("https://career-code-client-14ed8.web.app/applications", application)
+        axios.post("https://career-code-server-chi.vercel.app/applications", application)
             .then(() => {
                 // console.log(data.data);
                 Swal.fire({

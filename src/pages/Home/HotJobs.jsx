@@ -12,7 +12,7 @@ const HotJobs = () => {
 
 
     useEffect(() => {
-        fetch('https://career-code-client-14ed8.web.app/allJobs')
+        fetch('https://career-code-server-chi.vercel.app/allJobs')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

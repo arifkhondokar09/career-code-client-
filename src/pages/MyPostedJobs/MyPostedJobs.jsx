@@ -12,7 +12,7 @@ const MyPostedJobs = () => {
     const { user } = use(AuthContext);
 
     useEffect(() => {
-        fetch(`https://career-code-client-14ed8.web.app/jobs?email=${user.email}`, {
+        fetch(`https://career-code-server-chi.vercel.app/jobs?email=${user.email}`, {
         
             credentials: 'include'
         })
